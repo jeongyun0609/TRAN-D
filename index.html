@@ -71,7 +71,8 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a >
+                <a href="https://github.com/jeongyun0609/TRAN-D"
+                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                   </span>
@@ -142,7 +143,29 @@
       <div class="column is-full-width">
         <h2 class="title is-3">Results</h2>
         <!-- Subsection. -->
-        <h3 class="title is-4">Unknown object depth reconstruction results of synthetic sequences</h3>
+
+        <h3 class="title is-4">Segmentation results</h3>
+        <div class="content has-text-justified">
+          <p>
+            We fine-tuned Grounded SAM using only synthetic data generated from the TransPose dataset.Despite being trained exclusively on synthetic images, the model generalizes well to real-world scenarios, accurately segmenting transparent objects across diverse scenes.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+            <img src="./images/seg_syn.png" alt="LEAP Comparison figure." width="100%"/>
+        </div>
+
+        </div>
+        <div class="content has-text-centered">
+            <img src="./images/seg_real.png" alt="LEAP Comparison figure." width="100%"/>
+        </div>
+
+      <!-- Subsection. -->
+        <h3 class="title is-4">Unknown Object Depth Reconstruction Results on Synthetic Sequences</h3>
+        <h3 class="title is-4" style="color: white;">
+          Synthetic sequence depth reconstruction: 
+          <span style="color: yellow; font-weight: bold;">Textureless</span>
+        </h3>
+
       <!-- Flexbox container for 3 items in a row -->
       <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
         <!-- Item 1 -->
@@ -169,10 +192,10 @@
           </video>
         </div>
       </div>
+
         <div class="content has-text-justified"> 
           <p></p>
         </div>
-
       <!-- Flexbox container for 3 items in a row -->
       <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
         <!-- Item 1 -->
@@ -199,13 +222,11 @@
           </video>
         </div>
       </div>
-        <div class="content has-text-justified"> 
-          <p></p>
-        </div>
+
 
 
         <!-- Subsection. -->
-        <h3 class="title is-4">Unknown object depth reconstruction results of real-world sequences<</h3>
+        <h3 class="title is-4">Unknown Object Depth Reconstruction Results on Real-World Mixed Sequences</h3>
         <div class="content has-text-justified">
           <p>
 
@@ -230,10 +251,10 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title is-3">BibTeX</h2>
-<pre><code>@inproceedings{zhao2025diffusionsfm,
-  title={DiffusionSfM: Predicting Structure and Motion via Ray Origin and Endpoint Diffusion}, 
-  author={Qitao Zhao and Amy Lin and Jeff Tan and Jason Y. Zhang and Deva Ramanan and Shubham Tulsiani},
-  booktitle={CVPR},
+<pre><code>@inproceedings{jeongyun2025trand,
+  title={2D Gaussian Splatting-based Sparse-view Transparent Object Depth Reconstruction via Physics Simulation for Scene Update}, 
+  author={Jeongyun Kim, Seunghoon Jeong, Giseop Kim, Myung-Hwan Jeon, Eunji Jun and Ayoung Kim},
+  booktitle={ICCV},
   year={2025} 
 }</code></pre>
   </div>
@@ -244,10 +265,7 @@
   <div class="container is-max-desktop content">
     <h2 class="title is-3">Acknowledgements</h2>
     <p>
-      We thank the members of the Physical Perception Lab at CMU for their valuable discussions, and extend special thanks to Yanbo Xu for his insights on diffusion models.
-    </p>
-    <p>
-      This work used Bridges-2 at Pittsburgh Supercomputing Center through allocation CIS240166 from the Advanced Cyberinfrastructure Coordination Ecosystem: Services & Support (ACCESS) program, which is supported by National Science Foundation grants #2138259, #2138286, #2138307, #2137603, and #2138296. This work was supported by Intelligence Advanced Research Projects Activity (IARPA) via Department of Interior/Interior Business Center (DOI/IBC) contract number 140D0423C0074. The U.S. Government is authorized to reproduce and distribute reprints for Governmental purposes notwithstanding any copyright annotation thereon. Disclaimer: The views and conclusions contained herein are those of the authors and should not be interpreted as necessarily representing the official policies or endorsements, either expressed or implied, of IARPA, DOI/IBC, or the U.S. Government.
+      This work was supported by the National Research Founda- tion of Korea (NRF) grant funded by the Korea government (MSIT)(No. RS-2024-00461409), and in part by Hyundai Motor Company and Kia. and the Institute of Information & communications Technology Planning & Evaluation (IITP) grant funded by the Korea government(MSIT) No.2022-0- 00480, Development of Training and Inference Methods for Goal-Oriented Artificial Intelligence Agents.
     </p>
   </div>
 </section>
@@ -257,10 +275,10 @@
   <div class="container">
     <div class="content has-text-centered">
       <a class="icon-link"
-         href="https://arxiv.org/abs/2505.05473">
+         href="https://arxiv.org/abs/43trtrwtrrtrw">
         <i class="fas fa-file-pdf"></i>
       </a>
-      <a class="icon-link" href="https://github.com/QitaoZhao/DiffusionSfM" class="external-link" disabled>
+      <a class="icon-link" href="https://github.com/jeongyun0609/TRAN-D class="external-link" disabled>
         <i class="fab fa-github"></i>
       </a>
     </div>
@@ -268,7 +286,7 @@
       <div class="column is-8">
         <div class="content">
           <p>
-            This website is built using this template (<a href="https://github.com/nerfies/nerfies.github.io">source code</a>). The 3D model visualization is adapted from <a href="https://vgg-t.github.io/">VGGT</a>.
+            This website is built using this template (<a href="https://qitaozhao.github.io/DiffusionSfM">source code</a>).
           </p>
         </div>
       </div>
