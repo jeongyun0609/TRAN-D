@@ -204,42 +204,27 @@
         </div>
 
 
-
         <!-- Subsection. -->
-        <h3 class="title is-4">Qualitative Comparison of Predicted Geometry and Camera Poses</h3>
+        <h3 class="title is-4">Unknown object depth reconstruction results of real-world sequences<</h3>
         <div class="content has-text-justified">
           <p>
-            DiffusionSfM demonstrates robust performance even with challenging inputs. Compared to DUSt3R, which sometimes fails to register images in a consistent manner, DiffusionSfM consistently yields a coherent global prediction. Additionally, while we observe that DUSt3R can predict highly precise camera rotations, it often struggles with camera centers (see the backpack example). Input images depicting scenes are out-of-distribution for RayDiffusion, as it is trained on CO3D only.
+
           </p>
         </div>
         <div class="content has-text-centered">
-            <img src="./research/DiffusionSfM/figures/vis_compare.jpg" alt="LEAP Comparison figure." width="100%"/>
+            <img src="./images/mix.png" alt="LEAP Comparison figure." width="100%"/>
         </div>
 
-        <!-- Subsection. -->
+        <!-- Subsection.
         <div class="content has-text-centered">
             <img src="./research/DiffusionSfM/figures/vis_cameras.png" alt="LEAP Comparison figure." width="100%"/>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
 </section>
 
 
-<section class="section">
-  <div class="container is-max-desktop content">
-    <h2 class="title is-3">Discussion</h2>
-    <p>
-      We present DiffusionSfM and demonstrate that it recovers accurate predictions of both cameras and geometry from multi-view inputs. Although our results are promising, several challenges and open questions remain. 
-    </p>
-    <p>
-      Notably, DiffusionSfM employs a pixel-space diffusion model, in contrast to the latent-space models adopted by state-of-the-art T2I generative systems. Operating in pixel space may require greater model capacity, yet our current model remains relatively small -- potentially explaining the noisy patterns observed along object boundaries. Learning an expressive latent space for ray origins and endpoints by training a VAE could be a promising direction for future work. In addition, the computational requirement in multi-view transformers scales quadratically with the number of input images: one would require masked attention to deploy systems like ours for a large set of input images. 
-    </p>
-    <p>
-      Despite these challenges, we believe that our work highlights the potential of a unified approach for multi-view geometry tasks. We envision that our approach can be built upon to train a common system across related geometric tasks, such as SfM (input images with unknown origins and endpoints), registration (some images have known origins and endpoints, whereas others don't), mapping (known rays but unknown endpoints), and view synthesis (unknown pixel values for known rays). </p>
-    </p>
-  </div>
-</section>
 
 
 <section class="section" id="BibTeX">
