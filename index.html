@@ -128,7 +128,7 @@
           </p>
         </div>
         <div class="content has-text-centered">
-          <img src="./TRAN-D/figure2.pdf" alt="Method figure."/>
+          <img src="./images/figure2.pdf" alt="Method figure."/>
         </div>
       </div>
     </div>
@@ -142,34 +142,13 @@
       <div class="column is-full-width">
         <h2 class="title is-3">Results</h2>
 
-        <!-- Subsection. -->
-        <h3 class="title is-4">Quantitative Comparison of Camera Pose Accuracy on CO3D</h3>
-        <div class="content has-text-justified">
-          <p>
-            On the left, we report the proportion of relative camera rotations within 15° of the ground truth. On the right, we report the proportion of camera centers within 10% of the scene scale. To align the predicted camera centers to ground-truth, we apply an optimal similarity transform, hence the alignment is perfect at N=2 but worsens with more images. DiffusionSfM outperforms all other methods for camera center accuracy, and outperforms all methods trained on equivalent data for rotation accuracy.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <img src="./research/DiffusionSfM/figures/pose_acc.png" alt="SPARF Comparison figure." width="75%"/>
-        </div>
-        <!--/ Subsection. -->
+      
 
         <!-- Subsection. -->
-        <h3 class="title is-4">Quantitative Comparison of Predicted Geometry on CO3D Unseen Categories</h3>
+        <h3 class="title is-4">Unknown object depth reconstruction results of synthetic sequences</h3>
         <div class="content has-text-justified">
           <p>
-            Top: CD computed on all scene points. Bottom: CD computed on foreground points only. Models marked with "*" are trained on CO3D only, while those without are trained on multiple datasets. Note that top and bottom values are not directly comparable, as each ground-truth point cloud is individually normalized.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-            <img src="./research/DiffusionSfM/figures/geometry_acc.png" alt="LEAP Comparison figure." width="35%"/>
-        </div>
-
-        <!-- Subsection. -->
-        <h3 class="title is-4">Quantitative Comparison of Camera Pose Accuracy on Two Scene-Level Datasets</h3>
-        <div class="content has-text-justified">
-          <p>
-            Top: Habitat (2–5 views). Bottom: RealEstate10k (2, 4, 6, 8 views). Each grid reports camera rotation accuracy (left) and center accuracy (right). While DiffusionSfM performs on par with DUSt3R in rotation accuracy, it consistently surpasses DUSt3R in center accuracy.
+            
           </p>
         </div>
         <div class="content has-text-centered">
