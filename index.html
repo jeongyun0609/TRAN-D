@@ -85,7 +85,15 @@
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
-                  <span>Code</span>
+                  <span>Code (Coming Soon)</span>
+                  </a>
+              </span>
+              <span class="link-block">
+                <a class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video (Coming soon)</span>
                   </a>
               </span>
             </div>
@@ -147,7 +155,7 @@
         <h3 class="title is-4">Segmentation for Transparent objects</h3>
         <div class="content has-text-justified">
           <p>
-            The two rows above show the RGB image and segmentation results at t=0, while the two rows below show the corresponding situation at t=1. 
+            The two rows above show the RGB image and segmentation results at t=0, while the two rows below show the situation at t=1. 
             As the scene transitions from t=0 to t=1, some of the objects present in the scene are removed.
             During this process, some remaining objects that were in contact with removed objects are relocated.
             Our Grounded SAM not only accurately distinguishes each object in cluttered scenes containing transparent objects, but also reliably tracks the objects whose positions change after some items are removed.
@@ -173,7 +181,7 @@
         <div class="content has-text-justified">
           <p>
             We evaluated TRAN-D’s robustness and versatility on scenes with diverse backgrounds and textures. 
-            The first row shows BEV (bird’s-eye view) images sampled from the sparse-view training images, while the second row displays a zoomed-in view of the first test pose where we perform depth reconstruction.
+            The first row shows BEV images included in the sparse-view training images, while the second row displays a zoomed-in view of the first test pose where we perform depth reconstruction.
             The last row presents the object depth reconstruction results from a spiral sequence of test poses. 
             The segmentation cleanly separates the objects from the background, enabling object-focused reconstruction and avoiding the influence of floaters.
           </p>
@@ -206,6 +214,7 @@
         </div>
       </div>
 
+      <br>
       <div class="content has-text-justified">
         <p>
           Below are the results at t=1, where the images inside the red boxes show the corresponding situation at t=0 for comparison. 
@@ -301,6 +310,7 @@
         </div>
       </div>
 
+      <br>
         <!-- Subsection. -->
         <h3 class="title is-4">Results on Real-World Mixed Sequences</h3>
         <div class="content has-text-justified">
