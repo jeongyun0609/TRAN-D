@@ -42,7 +42,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h2 class="title is-2 publication-title">2D Gaussian Splatting-based Sparse-view Transparent Object<br>
+          <h2 class="title is-3 publication-title">2D Gaussian Splatting-based Sparse-view Transparent Object<br>
             Depth Reconstruction via Physics Simulation for Scene Update</h2>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
@@ -85,7 +85,16 @@
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
-                  <span>Code</span>
+                  <span>Code (Coming Soon)</span>
+                  </a>
+              </span>
+              <span class="link-block">
+                <a href="https://youtu.be/2JbYRnuptD8"
+                class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
                   </a>
               </span>
             </div>
@@ -144,27 +153,40 @@
         <h2 class="title is-3">Results</h2>
         <!-- Subsection. -->
 
-        <h3 class="title is-4">Segmentation results</h3>
+        <h3 class="title is-4">Segmentation for Transparent objects</h3>
         <div class="content has-text-justified">
           <p>
-            We fine-tuned Grounded SAM using only synthetic data generated from the TransPose dataset.Despite being trained exclusively on synthetic images, the model generalizes well to real-world scenarios, accurately segmenting transparent objects across diverse scenes.
+            The two rows above show the RGB image and segmentation results at t=0, while the two rows below show the situation at t=1. 
+            As the scene transitions from t=0 to t=1, some of the objects present in the scene are removed.
+            During this process, some remaining objects that were in contact with removed objects are relocated.
+            Our Grounded SAM not only accurately distinguishes each object in cluttered scenes containing transparent objects, but also reliably tracks the objects whose positions change after some items are removed.
           </p>
         </div>
         <div class="content has-text-centered">
             <img src="./images/seg_syn.png" alt="LEAP Comparison figure." width="100%"/>
         </div>
-
+        <div class="content has-text-justified">
+          <p>
+            We fine-tuned Grounded SAM using synthetic data generated from the TransPose dataset. 
+            Despite being trained exclusively on synthetic images, the model generalizes well to real-world scenarios, accurately segmenting transparent objects across diverse scenes.
+            Similarly, our Grounded SAM still recognizes objects whose positions have changed as the same objects, such as the plastic bottle (blue mask) that remained but shifted after the beaker (pink mask) was removed in the second row scene.
+          </p>
+        </div>
         <div class="content has-text-centered">
-            <img src="./images/seg_real.png" alt="LEAP Comparison figure." width="100%"/>
+            <img src="./images/more_seg_real.png" alt="LEAP Comparison figure." width="100%"/>
         </div>
 
 
       <!-- Subsection. -->
-        <h3 class="title is-4">Unknown Object Depth Reconstruction Results on Synthetic Sequences</h3>
+        <h3 class="title is-4">Object Depth Reconstruction on Synthetic Sequences</h3>
         <div class="content has-text-justified">
           <p>
-            Synthetic sequence depth reconstruction: Textureless
+            We evaluated TRAN-D’s robustness and versatility on scenes with diverse backgrounds and textures. 
+            The first row shows BEV images included in the sparse-view training images, while the second row displays a zoomed-in view of the first test pose where we perform depth reconstruction.
+            The last row presents the object depth reconstruction results from a spiral sequence of test poses. 
+            The segmentation cleanly separates the objects from the background, enabling object-focused reconstruction and avoiding the influence of floaters.
           </p>
+        </div>
 
       <!-- Flexbox container for 3 items in a row -->
       <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
@@ -193,6 +215,15 @@
         </div>
       </div>
 
+      <br>
+      <div class="content has-text-justified">
+        <p>
+          Below are the results at t=1, where the images inside the red boxes show the corresponding situation at t=0 for comparison. 
+          We removed the objects with the one-hot vector obtained via segmentation, predicted the motion of the remaining objects through physics simulation, and then updated the Gaussian representation with minimal iterations based on a single image capturing the changed scene. 
+          In the result video, you can see that the removed objects disappear correctly, while the remaining objects are also finely adjusted.
+        </p>
+      </div>
+
       <!-- Flexbox container for 3 items in a row -->
       <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
         <!-- Item 1 -->
@@ -219,11 +250,15 @@
           </video>
         </div>
       </div>
+      
+      <br>
+      <div class="content has-text-justified">
+        <p>
+          Unlike the scenes above, the scenes below demonstrate results on backgrounds with textures. 
+          Even at t=1, depth reconstruction continues to perform reliably.
+        </p>
+      </div>
 
-
-        <div class="content has-text-justified"> 
-          <p>Synthetic sequence depth reconstruction: Texture</p>
-        </div>
       <!-- Flexbox container for 3 items in a row -->
       <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
         <!-- Item 1 -->
@@ -238,7 +273,7 @@
         <div style="text-align: center; width: 30%;">
           <img src="./images/texture2_0.png" alt="Result 2" style="width: 100%;"/>
           <video style="width: 100%; margin-top: 0.5rem;" controls muted loop>
-            <source src="./videos/texture2_0.mp4" type="video/mp4">
+            <source src="./videos/texture3_0.mp4" type="video/mp4">
           </video>
         </div>
 
@@ -246,7 +281,7 @@
         <div style="text-align: center; width: 30%;">
           <img src="./images/texture3_0.png" alt="Result 3" style="width: 100%;"/>
           <video style="width: 100%; margin-top: 0.5rem;" controls muted loop>
-            <source src="./videos/texture3_0.mp4" type="video/mp4">
+            <source src="./videos/texture2_0.mp4" type="video/mp4">
           </video>
         </div>
       </div>
@@ -264,7 +299,7 @@
         <div style="text-align: center; width: 30%;">
           <img src="./images/texture2_1.png" alt="Result 2" style="width: 100%;"/>
           <video style="width: 100%; margin-top: 0.5rem;" controls muted loop>
-            <source src="./videos/texture2_1.mp4" type="video/mp4">
+            <source src="./videos/texture3_1.mp4" type="video/mp4">
           </video>
         </div>
 
@@ -272,16 +307,18 @@
         <div style="text-align: center; width: 30%;">
           <img src="./images/texture3_1.png" alt="Result 3" style="width: 100%;"/>
           <video style="width: 100%; margin-top: 0.5rem;" controls muted loop>
-            <source src="./videos/texture3_1.mp4" type="video/mp4">
+            <source src="./videos/texture2_1.mp4" type="video/mp4">
           </video>
         </div>
       </div>
 
+      <br>
         <!-- Subsection. -->
-        <h3 class="title is-4">Unknown Object Segmentation and Depth Reconstruction Results on Real-World Mixed Sequences</h3>
+        <br>
+        <h3 class="title is-4">Results on Real-World Mixed Sequences</h3>
         <div class="content has-text-justified">
           <p>
-
+            These are the segmentation and depth reconstruction results for real-world scenes containing both transparent and opaque objects.
           </p>
         </div>
         <div class="content has-text-centered">
