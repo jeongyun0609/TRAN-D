@@ -12,3 +12,6 @@ data
 eval
 *.npz
 **/tmp
+
+./tran-d_seg/checkpoints/tran-d_seg_ckpt.pth
+./tran-d_seg/checkpoints/sam2.1_hiera_large.pt
