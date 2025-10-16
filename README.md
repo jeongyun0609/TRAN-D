@@ -13,7 +13,7 @@ TRAN-D/
 ## TODO
 - [X] Code release
 - [ ] Dataset release
-- [ ] Grounded SAM2 weight release
+- [ ] Release of the Grounding DINO checkpoint for transparent objects
 - [ ] Docker release
 
 ## Environment setup
@@ -22,12 +22,12 @@ We tested our code in CUDA 11.8 and python 3.10 / 3.11.
 1. We are going to provide Docker Environment for both modules. Segmentation module is based on Grounded SAM2 repo from [here](https://github.com/IDEA-Research/Grounded-Segment-Anything). Gaussian Splatting module is based on 2D Gaussian Splatting from [here](https://github.com/hbb1/2d-gaussian-splatting) and includes our customized gaussian renderer (`tran-d_gs/submodules/diff-surfel-seg-rasterization`).
 
 
-2. If you want to install to your own environment, please refer to each module's `environment.yml`. While `tran-d_seg` is almost same with Grounded SAM2, `tran-d_gs` needs some additional submodules such as `mpm_engine`.
+2. If you want to install to your own environment, please refer to each module's `environment.yml`. While `tran-d_seg` is almost same with Grounded SAM2, `tran-d_gs` requires some additional submodules such as `mpm_engine`.
 
 
 ## Data preparation
 
-We are going to open-source dataset we used for the evaluation.
+We are going to open-source dataset and Grounding DINO checkpoint which is tailored for transparent objects we used for the evaluation.
 
 The segmentation stage expects the dataset layout used in the ICCV submission:
 
