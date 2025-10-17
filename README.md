@@ -6,8 +6,8 @@ Official implementation of **TRAN-D** (ICCV 2025). This repository bundles the s
 
 ```
 TRAN-D/
-├── tran-d_seg/   # Segmentation pipeline (Grounded SAM2 + data preprocessing)
-└── tran-d_gs/    # Gaussian Splatting optimization, rendering, and evaluation
+├── tran-d_seg/   # Grounded SAM2 segmentation + data preprocessing
+└── tran-d_gs/    # Gaussian Splatting + physics simulation
 ```
 
 ## TODO
@@ -52,7 +52,7 @@ Preprocessing will populate each sequence folder with:
    bash preprocess.sh
    ```
 
-2. **Gaussian Splatting optimisation** – edit `gpu`, `data_dir`, and `result_dir` in `tran-d_gs/run.sh`, then run:
+2. **Gaussian Splatting** – edit `gpu`, `data_dir`, and `result_dir` in `tran-d_gs/run.sh`, then run:
 
    ```bash
    cd tran-d_gs
