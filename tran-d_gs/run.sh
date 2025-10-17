@@ -19,8 +19,8 @@ done
 
 for ((i=11; i<21; i++))
 do
-    source_dir=$data_dir/syn_test_0$(printf "%02d" $i)
-    output_dir=$result_dir/syn_test_0$(printf "%02d" $i)
+    source_dir=$data_dir/syn_test_$(printf "%02d" $i)
+    output_dir=$result_dir/syn_test_$(printf "%02d" $i)
     CUDA_VISIBLE_DEVICES=$gpu python train.py -s $source_dir -m $output_dir --eval --iteration $iteration --port $port --depth_ratio 1
     CUDA_VISIBLE_DEVICES=$gpu python render.py -m $output_dir --iteration $iteration --skip_train --depth_ratio 1 --skip_gt --skip_diff
     CUDA_VISIBLE_DEVICES=$gpu python physim.py -s $source_dir -m $output_dir --remove_obj --iteration $iteration --time 0.5
