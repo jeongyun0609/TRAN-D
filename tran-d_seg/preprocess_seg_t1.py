@@ -25,7 +25,7 @@ parser.add_argument(
 )
 parser.add_argument(
     '--gd_checkpoint', required=False,
-    default="./checkpoints/tran-d_seg_ckpt.pth", type=str,
+    default="./checkpoints/Grounding-DINO_TRAN-D.pth", type=str,
     help="checkpoint for grounding dino"
 )
 parser.add_argument(

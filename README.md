@@ -12,24 +12,37 @@ TRAN-D/
 
 ## TODO
 - [X] Code release
-- [ ] Dataset release
-- [ ] Release of the Grounding DINO checkpoint for transparent objects
-- [ ] Docker release
+- [X] Dataset release
+- [X] Release of the Grounding DINO checkpoint for transparent objects
+- [X] Docker release
 
 ## Environment setup
 We tested our code in CUDA 11.8 and python 3.10 / 3.11.
 
-1. We are going to provide Docker Environment for both modules. Segmentation module is based on Grounded SAM2 repo from [here](https://github.com/IDEA-Research/Grounded-Segment-Anything). Gaussian Splatting module is based on 2D Gaussian Splatting from [here](https://github.com/hbb1/2d-gaussian-splatting) and includes our customized gaussian renderer (`tran-d_gs/submodules/diff-surfel-seg-rasterization`).
+1. We provide Docker Environment for both modules. Segmentation module is based on [Grounded SAM2](https://github.com/IDEA-Research/Grounded-Segment-Anything). Gaussian Splatting module is based on [2D Gaussian Splatting](https://github.com/hbb1/2d-gaussian-splatting) and includes our customized gaussian renderer (`tran-d_gs/submodules/diff-surfel-seg-rasterization`).
 
+   ```terminal
+   docker pull jungyun0609/grounded_sam_2:1.0
+   docker pull jungyun0609/2dgs_depth_trans:1.0
+   ```
 
 2. If you want to install to your own environment, please refer to each module's `environment.yml`. While `tran-d_seg` is almost same with Grounded SAM2, `tran-d_gs` requires some additional submodules such as `mpm_engine`.
 
+   ```terminal
+   # after installation of 2D Gaussian Splatting
+   pip install ./submodules/diff-surfel-seg-rasterization
+   pip install taichi==1.7.3
+   ```
 
-## Data preparation
+## Data & checkpoint preparation
 
-We are going to open-source dataset and Grounding DINO checkpoint which is tailored for transparent objects we used for the evaluation.
+You can download the dataset and checkpoint from below:
+- Dataset of transparent object sequences: [this link](https://drive.google.com/drive/folders/1Tv6oTm9ggFXTyM8_zQZ_coocwbsFzxmk)
+- Grounding DINO checkpoint for transparent object: [this link](https://drive.google.com/file/d/1-Vhh1reoAfJeTlGRmfwkLkiXT2jD0Ark)
 
-The segmentation stage expects the dataset layout used in the ICCV submission:
+For SAM2 checkpoint, we use the same one with the original.
+
+The segmentation module expects the following dataset layout:
 
 - Synthetic sequences: `<DATA_ROOT>/syn_test_xx/<train or test>_<0 or 1>/data`
 - Real sequences: `<DATA_ROOT>/real_test_xx/train_<0 or 1>/camera`
@@ -48,6 +61,7 @@ Preprocessing will populate each sequence folder with:
 1. **Segmentation** – edit `gpu` and `data_dir` in `tran-d_seg/preprocess.sh`, then run:
 
    ```bash
+   # in jungyun0609/grounded_sam_2 docker
    cd tran-d_seg
    bash preprocess.sh
    ```
@@ -55,6 +69,7 @@ Preprocessing will populate each sequence folder with:
 2. **Gaussian Splatting** – edit `gpu`, `data_dir`, and `result_dir` in `tran-d_gs/run.sh`, then run:
 
    ```bash
+   # in jungyun0609/2dgs_depth_trans:1.0
    cd tran-d_gs
    bash run.sh
    ```
