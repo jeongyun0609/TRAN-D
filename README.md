@@ -37,8 +37,8 @@ We tested our code in CUDA 11.8 and python 3.10 / 3.11.
 ## Data & checkpoint preparation
 
 You can download the dataset and checkpoint from below:
-- Dataset of transparent object sequences: [this link](https://drive.google.com/drive/folders/1Tv6oTm9ggFXTyM8_zQZ_coocwbsFzxmk)
-- Grounding DINO checkpoint for transparent object: [this link](https://drive.google.com/file/d/1-Vhh1reoAfJeTlGRmfwkLkiXT2jD0Ark)
+- Dataset of transparent object sequences: [this link](https://drive.google.com/drive/folders/1msYVCHsrT0lQv_-JJL8pcHtabnHKIDIm?usp=drive_link)
+- Grounding DINO checkpoint for transparent object: [this link](https://drive.google.com/file/d/1CFBmRAi8T-aEo-23IcGrB8Mo6R3TtF4p/view?usp=drive_link)
 
 For SAM2 checkpoint, we use the same one with the original.
 
